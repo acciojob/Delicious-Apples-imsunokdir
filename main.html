@@ -9,6 +9,165 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="/styles.css">
+	<style>
+		body{
+			background-color:#10e37f;
+			height:100vh;
+			width:100vw;
+			margin:0;
+			padding:0;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+		section{
+			display:flex;
+			background-color:white;
+			width:600px;
+			height:520px;
+			/* background-color:blue; */
+		}
+		.product__photo{
+			background-color:white;
+			height:90%;
+			width:45%;
+			display:flex;
+			justify-content:center;
+			box-shadow:10px 10px 15px lightgray;
+			margin:auto;
+			margin-left:-30px;
+			border-radius: 5px;
+		}
+		.photo-main{
+			background-color:#b5e93f;
+			height: 80%;
+			border-radius: 5px;
+		}
+		.photo-container{
+		  display: flex;
+		  flex-direction: column;
+		  gap:5px;
+		  
+		}
+		.photo-main .floated-apple{
+		  /*height: 80%;*/
+		  width:100%;
+		  margin-left:-65px;
+		}
+
+		/*.photo-album{*/
+		/*	margin-right:20px;*/
+		/*}*/
+		.photo-album ul{
+			display:flex;
+			justify-content:center;
+			list-style:none;
+			gap:5px;
+		  padding: 0;
+		}
+
+		.photo-album ul li{
+			margin:0;
+			padding: 0;
+			width:45px;
+			height: 45px;
+			border:1px solid lightgray;
+		}
+		
+		.controls{
+		  display: flex;
+		  justify-content: space-between;
+		  color:white;
+		  padding: 10px;
+		}
+		
+		.photo-album img{
+		  height: 100%;
+		  width:100%;
+		  
+		  margin: 0;
+		  padding: 0;
+		}
+		
+		.product__info{
+			display:flex;
+			flex-direction:column;
+			gap:10px;
+			width:50%;
+			margin-top:20px;
+			padding:20px;
+		}
+		.title h1{
+			color:#606060;
+			padding:0;
+			margin:0;
+		}
+		.title span{
+			color: #c9c9c9;
+			font-size:15px
+		}
+		.price{
+			color: #fe3f40;
+			display:flex;
+			align-items:center;
+			gap:5px;
+			margin-top:30px;
+		}
+		.price span{
+			font-size:45px;
+			margin-top:-10px
+		}
+		.variant h3{
+			color:#ababab;
+			font-size:15px;
+		}
+		.variant ul{
+			display:flex;
+			list-style:none;
+			gap:5px;
+		}
+		.variant ul li:nth-child(1){
+			border:1px solid gray;
+			border-radius: 5px;
+			box-shadow: 5px 10px 10px #ccc;
+			
+		}
+		/*.variant ul li a img{*/
+		  
+		/*}*/
+		.variant ul li{
+			transition:0.3s; 
+		}
+		.variant ul li:hover{
+			cursor:pointer;
+			box-shadow: 5px 10px 10px #ccc;
+		}
+	
+		.benefits p{
+			color:#ababab;
+			font-size:15px;
+			font-weight:bold;
+		}
+		.benefits-list{
+			color:#424240;
+		}
+		.add-cart{
+			background-color:#fe3f40;
+			color:white;
+			width:50%;
+			height:30px;
+			margin-top:-15px;
+			border-radius:5px;
+			border:none;
+			transition:0.3s;
+			
+		}
+		.add-cart:hover{
+			cursor:pointer;
+			box-shadow:6px 2px 5px lightsalmon;
+			transform:scale(1.1)
+		}
+	</style>
 </head>
 
 <body>
@@ -20,19 +179,20 @@
 						<i class="fa fa-share-alt"></i>
 						<i class="fa fa-heart-o"></i>
 					</div>
-					<img src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png"
+					<img class="floated-apple" src="https://res.cloudinary.com/john-mantas/image/upload/v1537291846/codepen/delicious-apples/green-apple-with-slice.png"
 						alt="green apple slice">
 				</div>
 				<div class="photo-album">
 					<ul>
-						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
+						<li>
+							<img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
 								alt="green apple"></li>
 						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303532/codepen/delicious-apples/half-apple.png"
 								alt="half apple"></li>
 						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303160/codepen/delicious-apples/green-apple-flipped.png"
 								alt="green apple"></li>
 						<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537303708/codepen/delicious-apples/apple-top.png"
-								alt="apple top"></li>
+								alt="apple top"></li></a>
 					</ul>
 				</div>
 			</div>
@@ -48,19 +208,39 @@
 			<div class="variant">
 				<h3>SELECT A COLOR</h3>
 				<ul>
-					<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
-							alt="green apple"></li>
-					<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png"
-							alt="yellow apple"></li>
-					<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png"
-							alt="orange apple"></li>
-					<li><img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png"
-							alt="red apple"></li>
+					<li>
+						<a href="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png">
+						<img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302064/codepen/delicious-apples/green-apple2.png"
+							alt="green apple"></a></li>
+					<li>
+						<a href="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png">
+						<img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302752/codepen/delicious-apples/yellow-apple.png"
+							alt="yellow apple"></a>
+						</li>
+					<li>
+						<a href="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png">
+						<img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302427/codepen/delicious-apples/orange-apple.png"
+							alt="orange apple"></a></li>
+					<li>
+						<a href="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png">
+						<img src="https://res.cloudinary.com/john-mantas/image/upload/v1537302285/codepen/delicious-apples/red-apple.png"
+							alt="red apple"></a></li>
 				</ul>
 			</div>
 			<div class="description">
-				
+				<div class="benefits">
+					<p>BENEFITS</p>
+					<div class="benefits-list">
+						<ul>
+							<li>Apples are nutritious</li>
+							<li>Apples may be good for weight loss</li>
+							<li>Apples may be good for bone health</li>
+							<li>They're linked to a lowest risk of diabetes</li>
+						</ul>
+					</div>
+				</div>
 			</div>
+			<button class="add-cart">ADD TO CART</button>
 		</div>
 	</section>
 </body>
